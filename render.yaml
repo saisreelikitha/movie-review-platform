@@ -4,7 +4,7 @@ services:
     env: docker
     plan: free
     dockerfilePath: movie-review-backend/Dockerfile
-    healthCheckPath: /api/movies
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production

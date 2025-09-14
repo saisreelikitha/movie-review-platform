@@ -12,6 +12,11 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// Lightweight health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 app.use('/api/movies', movieRoutes);
 app.use('/api/users', userRoutes);
 

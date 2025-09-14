@@ -51,7 +51,7 @@ docker run -p 5000:5000 --env-file ./movie-review-backend/.env movie-review-back
    - `PORT` = `5000`
    - `MONGO_URI` = your MongoDB connection string
    - `JWT_SECRET` = your secret
-4. Deploy. Health check path: `/api/movies`
+4. Deploy. Health check path: `/health`
 
 Alternatively, use the included `render.yaml` via the Render Blueprint.
 
