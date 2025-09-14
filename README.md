@@ -33,6 +33,28 @@ npm install
 npm start
 ```
 
+## Deployment
+
+### Docker (local)
+Docker is not available in this workspace. On your machine:
+```bash
+docker build -t movie-review-backend ./movie-review-backend
+docker run -p 5000:5000 --env-file ./movie-review-backend/.env movie-review-backend
+```
+
+### Render
+1. Push this repo to GitHub.
+2. In Render, create a new Web Service from your repo.
+   - Environment: Docker
+   - Auto-detected `movie-review-backend/Dockerfile`
+3. Set environment variables:
+   - `PORT` = `5000`
+   - `MONGO_URI` = your MongoDB connection string
+   - `JWT_SECRET` = your secret
+4. Deploy. Health check path: `/api/movies`
+
+Alternatively, use the included `render.yaml` via the Render Blueprint.
+
 ## API Endpoints
 
 - `GET /api/movies` - Get all movies
